@@ -17,16 +17,16 @@ public class Octree
 
 	public int get(int x, int y, int z)
 	{
-		if(x < 0 || x >= (1<<size)) throw new RuntimeException("Coord out of bounds");
-		if(y < 0 || y >= (1<<size)) throw new RuntimeException("Coord out of bounds");
-		if(y < 0 || z >= (1<<size)) throw new RuntimeException("Coord out of bounds");
+		if(x < 0 || x >= (1<<size)) return 0;
+		if(y < 0 || y >= (1<<size)) return 0;
+		if(z < 0 || z >= (1<<size)) return 0;
 		return root.get(x, y, z, size-1);
 	}
-	public void set(int val, int x, int y, int z)
+	public void set(int x, int y, int z, int val)
 	{
 		if(x < 0 || x >= (1<<size)) throw new RuntimeException("Coord out of bounds");
 		if(y < 0 || y >= (1<<size)) throw new RuntimeException("Coord out of bounds");
-		if(y < 0 || z >= (1<<size)) throw new RuntimeException("Coord out of bounds");
+		if(z < 0 || z >= (1<<size)) throw new RuntimeException("Coord out of bounds");
 		root.set(val, x, y, z, size-1);
 	}
 
