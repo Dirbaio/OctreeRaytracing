@@ -2,13 +2,10 @@ package net.dirbaio.octree;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.KeyEvent;
-import java.awt.event.KeyListener;
-import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
+import java.awt.event.*;
 import java.awt.image.BufferedImage;
 
-public class Main extends JComponent implements MouseListener, KeyListener
+public class Main extends JComponent implements MouseListener, MouseMotionListener, KeyListener
 {
 	public static final int WIDTH = 640;
 	public static final int HEIGHT = 480;
@@ -45,16 +42,14 @@ public class Main extends JComponent implements MouseListener, KeyListener
 
 		addMouseListener(this);
 		addKeyListener(this);
+		addMouseMotionListener(this);
 		setFocusable(true);
 	}
 
+	boolean dirty = true;
 	void reRender()
 	{
-		long time = System.nanoTime();
-		render();
-		time = System.nanoTime()-time;
-		rendertime = time/1000000;
-
+		dirty = true;
 		repaint();
 	}
 
@@ -79,22 +74,74 @@ public class Main extends JComponent implements MouseListener, KeyListener
 			return fromRGB(val-512, 255, 255);
 	}
 
+	double rotx = 0;
+	double roty = 0;
+
+	double viewX;
+	double viewY;
+	double viewZ;
+	double viewXTop;
+	double viewYTop;
+	double viewZTop;
+	double viewXRight;
+	double viewYRight;
+	double viewZRight;
+
+	double len(double x, double y, double z)
+	{
+		return Math.sqrt(x*x+y*y+z*z);
+	}
+	void calcView()
+	{
+		viewX = Math.sin(rotx)*Math.cos(roty);
+		viewZ = Math.cos(rotx)*Math.cos(roty);
+		viewY = Math.sin(roty);
+
+		double upX = 0;
+		double upY = 1;
+		double upZ = 0;
+
+		//viewRight = view x up
+		viewXRight = viewY * upZ - viewZ * upY;
+		viewYRight = viewZ * upX - viewX * upZ;
+		viewZRight = viewX * upY - viewY * upX;
+
+		double rightLen = 1.0/len(viewXRight, viewYRight, viewZRight);
+		viewXRight*= rightLen;
+		viewYRight*= rightLen;
+		viewZRight*= rightLen;
+
+		//viewTop = viewRight x view
+		viewXTop = viewYRight * viewZ - viewZRight * viewY;
+		viewYTop = viewZRight * viewX - viewXRight * viewZ;
+		viewZTop = viewXRight * viewY - viewYRight * viewX;
+
+		double topLen = 1.0/len(viewXTop, viewYTop, viewZTop);
+		viewXTop*= topLen;
+		viewYTop*= topLen;
+		viewZTop*= topLen;
+
+	}
 	int renderPixel(double px, double py)
 	{
-		//Pos y dir del rayo
-		double x = 4;
-		double y = 4;
-		double z = -5;
+		calcView();
 
-		double dx = px;
-		double dy = py;
-		double dz = 1;
+		//Pos y dir del rayo
+		double dx = viewX + viewXRight * px + viewXTop * py;
+		double dy = viewY + viewYRight * px + viewYTop * py;
+		double dz = viewZ + viewZRight * px + viewZTop * py;
+
+		double x = 4 - viewX*9;
+		double y = 4 - viewY*9;
+		double z = 4 - viewZ*9;
+
 
 		if(algorithm == STUPID)
 		{
 			double step = 0.1;
+			int iters = 0;
 
-			while(z < 10)
+			while(iters < 100)
 			{
 				x += dx*step;
 				y += dy*step;
@@ -102,6 +149,8 @@ public class Main extends JComponent implements MouseListener, KeyListener
 				int val = o.get((int)Math.floor(x), (int)Math.floor(y), (int)Math.floor(z));
 				if(val != 0)
 					return val;
+
+				iters++;
 			}
 			return 0;
 		}
@@ -125,7 +174,7 @@ public class Main extends JComponent implements MouseListener, KeyListener
 
 			int iters = 0;
 			int res = 0;
-			while(vz < 10 && res == 0)
+			while(res == 0 && iters < 30)
 			{
 				iters++;
 				res = o.get(vx, vy, vz);
@@ -166,8 +215,15 @@ public class Main extends JComponent implements MouseListener, KeyListener
 	@Override
 	protected void paintComponent(Graphics g)
 	{
-		g.setColor(Color.BLACK);
-		g.fillRect(0, 0, WIDTH, HEIGHT);
+		if(dirty)
+		{
+			dirty = false;
+
+			long time = System.nanoTime();
+			render();
+			time = System.nanoTime()-time;
+			rendertime = time/1000000;
+		}
 		g.drawImage(img, 0, 0, null);
 		g.setColor(Color.WHITE);
 		g.drawString("Algorithm: "+ ALGORITHM_NAMES[algorithm], 10, 20);
@@ -183,6 +239,8 @@ public class Main extends JComponent implements MouseListener, KeyListener
 	@Override
 	public void mousePressed(MouseEvent e)
 	{
+		omx = e.getX();
+		omy = e.getY();
 
 	}
 
@@ -235,6 +293,29 @@ public class Main extends JComponent implements MouseListener, KeyListener
 
 	@Override
 	public void keyReleased(KeyEvent e)
+	{
+
+	}
+
+	int omx = 0;
+	int omy = 0;
+	double rotspeed = 0.006;
+	@Override
+	public void mouseDragged(MouseEvent e)
+	{
+
+		rotx -= (e.getX()-omx)*rotspeed;
+		roty -= (e.getY()-omy)*rotspeed;
+		if(roty < -Math.PI*0.49) roty = -Math.PI*0.49;
+		if(roty > Math.PI*0.49) roty = Math.PI*0.49;
+		reRender();
+
+		omx = e.getX();
+		omy = e.getY();
+	}
+
+	@Override
+	public void mouseMoved(MouseEvent e)
 	{
 
 	}
