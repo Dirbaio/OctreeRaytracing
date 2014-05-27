@@ -10,11 +10,7 @@ public class Main extends JComponent implements MouseListener, MouseMotionListen
 	public static final int WIDTH = 640;
 	public static final int HEIGHT = 480;
 
-	public static final int STUPID = 0;
-	public static final int GRIDWALK = 1;
-	public static final int OCTREEWALK = 2;
-	public static final String[] ALGORITHM_NAMES = {"Stupid", "Grid walk", "Octree walk"};
-	int algorithm = GRIDWALK;
+    Algorithm algo;
 
 	Octree o;
 	BufferedImage img;
@@ -35,6 +31,7 @@ public class Main extends JComponent implements MouseListener, MouseMotionListen
 					if(Math.random() < 0.3)
 						o.set(x, y, z, (int)(Math.random()*100000000));
 
+        algo = new StupidAlgorithm(o);
 
 		img = new BufferedImage(WIDTH, HEIGHT, BufferedImage.TYPE_INT_RGB);
 
@@ -135,70 +132,7 @@ public class Main extends JComponent implements MouseListener, MouseMotionListen
 		double y = 4 - viewY*9;
 		double z = 4 - viewZ*9;
 
-
-		if(algorithm == STUPID)
-		{
-			double step = 0.1;
-			int iters = 0;
-
-			while(iters < 100)
-			{
-				x += dx*step;
-				y += dy*step;
-				z += dz*step;
-				int val = o.get((int)Math.floor(x), (int)Math.floor(y), (int)Math.floor(z));
-				if(val != 0)
-					return val;
-
-				iters++;
-			}
-			return 0;
-		}
-		else if(algorithm == GRIDWALK)
-		{
-			int stepX = (dx > 0) ? 1 : -1;
-			int stepY = (dy > 0) ? 1 : -1;
-			int stepZ = (dz > 0) ? 1 : -1;
-
-			int vx = (int)Math.floor(x);
-			int vy = (int)Math.floor(y);
-			int vz = (int)Math.floor(z);
-
-			double tDeltaX = dx == 0 ? Double.POSITIVE_INFINITY : Math.abs(1/dx);
-			double tDeltaY = dy == 0 ? Double.POSITIVE_INFINITY : Math.abs(1/dy);
-			double tDeltaZ = dz == 0 ? Double.POSITIVE_INFINITY : Math.abs(1/dz);
-			double tMaxX = dx == 0 ? Double.POSITIVE_INFINITY : ((dx > 0) ? (1 + vx - x)*tDeltaX :(x - vx)*tDeltaX);
-			double tMaxY = dy == 0 ? Double.POSITIVE_INFINITY : ((dy > 0) ? (1 + vy - y)*tDeltaY :(y - vy)*tDeltaY);
-			double tMaxZ = dz == 0 ? Double.POSITIVE_INFINITY : ((dz > 0) ? (1 + vz - z)*tDeltaZ :(z - vz)*tDeltaZ);
-
-
-			int iters = 0;
-			int res = 0;
-			while(res == 0 && iters < 30)
-			{
-				iters++;
-				res = o.get(vx, vy, vz);
-
-				if(tMaxX < tMaxY && tMaxX < tMaxZ) //Avanzar x
-				{
-					tMaxX += tDeltaX;
-					vx += stepX;
-				}
-				else if(tMaxY < tMaxZ)
-				{
-					tMaxY += tDeltaY;
-					vy += stepY;
-				}
-				else
-				{
-					tMaxZ += tDeltaZ;
-					vz += stepZ;
-				}
-			}
-			return res; //scale(iters*10);
-		}
-		else
-			return 0xFF0000;
+        return algo.renderPixel(new Vector3D(x, y, z), new Vector3D(dx, dy, dz));
 	}
 
 	void render()
@@ -226,7 +160,7 @@ public class Main extends JComponent implements MouseListener, MouseMotionListen
 		}
 		g.drawImage(img, 0, 0, null);
 		g.setColor(Color.WHITE);
-		g.drawString("Algorithm: "+ ALGORITHM_NAMES[algorithm], 10, 20);
+		g.drawString("Algorithm: "+ algo, 10, 20);
 		g.drawString("Rendered in " + rendertime + " ms.", 10, 35);
 	}
 
@@ -276,11 +210,11 @@ public class Main extends JComponent implements MouseListener, MouseMotionListen
 	public void keyTyped(KeyEvent e)
 	{
 		if(e.getKeyChar() == '1')
-			algorithm = STUPID;
+            algo = new StupidAlgorithm(o);
 		if(e.getKeyChar() == '2')
-			algorithm = GRIDWALK;
+            algo = new GridwalkAlgorithm(o);
 		if(e.getKeyChar() == '3')
-			algorithm = OCTREEWALK;
+            algo = new OctreeAlgorithm(o);
 
 		reRender();
 	}

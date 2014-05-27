@@ -3,8 +3,8 @@ package net.dirbaio.octree;
 
 public class Octree
 {
-	private OctreeNode root;
-	private int size;
+	public Node root;
+	public int size;
 
 	public Octree(int size, int fill)
 	{
@@ -12,7 +12,7 @@ public class Octree
 			throw new RuntimeException("Minimum octree size is 2x2");
 
 		this.size = size;
-		root = new OctreeNode(fill);
+		root = new Node(fill);
 	}
 
 	public int get(int x, int y, int z)
@@ -30,14 +30,14 @@ public class Octree
 		root.set(val, x, y, z, size-1);
 	}
 
-	private static final class OctreeNode
+	public static final class Node
 	{
-		private OctreeNode[] children;
+		private Node[] children;
 		private int[] values;
 
-		public OctreeNode(int val)
+		public Node(int val)
 		{
-			children = new OctreeNode[8];
+			children = new Node[8];
 			values = new int[8];
 			for(int i = 0; i < 8; i++)
 				values[i] = val;
@@ -74,7 +74,7 @@ public class Octree
 				//Only need to modify if we're writing a different value.
 				if(val != values[ind])
 				{
-					children[ind] = new OctreeNode(values[ind]);
+					children[ind] = new Node(values[ind]);
 					children[ind].set(val, x, y, z, size-1);
 
 					//No need to check for collapsible, we know the child won't be collapsible.

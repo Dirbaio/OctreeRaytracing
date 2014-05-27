@@ -2,7 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f94af50c-a1d7-4437-a311-427e9727e35b" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/net/dirbaio/octree/Algorithm.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/net/dirbaio/octree/GridwalkAlgorithm.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/net/dirbaio/octree/OctreeAlgorithm.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/net/dirbaio/octree/StupidAlgorithm.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/net/dirbaio/octree/Vector3D.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/net/dirbaio/octree/Main.java" afterPath="$PROJECT_DIR$/src/net/dirbaio/octree/Main.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/net/dirbaio/octree/Octree.java" afterPath="$PROJECT_DIR$/src/net/dirbaio/octree/Octree.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="OctreeRaytracing.iws" />
@@ -67,10 +73,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="Main.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="Main.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/net/dirbaio/octree/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="203" column="9" selection-start="4501" selection-end="4501" vertical-scroll-proportion="0.33222038" vertical-offset="2846" max-vertical-offset="4920">
+            <state line="134" column="24" selection-start="2825" selection-end="2825" vertical-scroll-proportion="0.0" vertical-offset="1663" max-vertical-offset="3930">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -78,10 +84,57 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Octree.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="Algorithm.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/net/dirbaio/octree/Algorithm.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="11" column="0" selection-start="157" selection-end="236" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="285">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="StupidAlgorithm.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/net/dirbaio/octree/StupidAlgorithm.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="12" column="0" selection-start="210" selection-end="279" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="600">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="OctreeAlgorithm.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/net/dirbaio/octree/OctreeAlgorithm.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="115" column="56" selection-start="3997" selection-end="3997" vertical-scroll-proportion="0.0" vertical-offset="1413" max-vertical-offset="3285">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Vector3D.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/net/dirbaio/octree/Vector3D.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="17" column="7" selection-start="482" selection-end="482" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="4980">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="GridwalkAlgorithm.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/net/dirbaio/octree/GridwalkAlgorithm.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="15" column="45" selection-start="434" selection-end="434" vertical-scroll-proportion="-3.0892856" vertical-offset="52" max-vertical-offset="960">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Octree.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/net/dirbaio/octree/Octree.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="24" column="48" selection-start="513" selection-end="513" vertical-scroll-proportion="0.0" vertical-offset="360" max-vertical-offset="1770">
+            <state line="30" column="5" selection-start="783" selection-end="783" vertical-scroll-proportion="0.30116472" vertical-offset="269" max-vertical-offset="1770">
               <folding />
             </state>
           </provider>
@@ -102,15 +155,19 @@
       <list>
         <option value="$PROJECT_DIR$/src/Main.java" />
         <option value="$PROJECT_DIR$/src/net/dirbaio/octree/Octree.java" />
+        <option value="$PROJECT_DIR$/src/net/dirbaio/octree/Vector3D.java" />
         <option value="$PROJECT_DIR$/src/net/dirbaio/octree/Main.java" />
+        <option value="$PROJECT_DIR$/src/net/dirbaio/octree/Algorithm.java" />
+        <option value="$PROJECT_DIR$/src/net/dirbaio/octree/StupidAlgorithm.java" />
+        <option value="$PROJECT_DIR$/src/net/dirbaio/octree/GridwalkAlgorithm.java" />
+        <option value="$PROJECT_DIR$/src/net/dirbaio/octree/OctreeAlgorithm.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-1" />
-    <option name="y" value="27" />
-    <option name="width" value="1922" />
-    <option name="height" value="1054" />
+    <option name="y" value="24" />
+    <option name="width" value="1920" />
+    <option name="height" value="1032" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
@@ -139,6 +196,7 @@
     </navigator>
     <panes>
       <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -177,7 +235,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -191,6 +248,7 @@
     <property name="dynamic.classpath" value="false" />
     <property name="OverrideImplement.combined" value="true" />
     <property name="OverrideImplement.overriding.sorted" value="false" />
+    <property name="LayoutCode.rearrangeEntriesJava" value="false" />
   </component>
   <component name="RunManager" selected="Application.Main">
     <configuration default="false" name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
@@ -249,19 +307,6 @@
       <option name="PORT" value="5005" />
       <method />
     </configuration>
-    <configuration default="true" type="Applet" factoryName="Applet">
-      <module name="" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="HTML_FILE_NAME" />
-      <option name="HTML_USED" value="false" />
-      <option name="WIDTH" value="400" />
-      <option name="HEIGHT" value="300" />
-      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <option name="VM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <method />
-    </configuration>
     <configuration default="true" type="TestNG" factoryName="TestNG">
       <module name="" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
@@ -287,6 +332,19 @@
       <envs />
       <properties />
       <listeners />
+      <method />
+    </configuration>
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <module name="" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="HTML_FILE_NAME" />
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <option name="VM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
       <method />
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
@@ -392,30 +450,30 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1" y="27" width="1922" height="1054" extended-state="6" />
-    <editor active="true" />
+    <frame x="0" y="24" width="1920" height="1032" extended-state="0" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39935413" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32938644" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3989305" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32834226" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20979765" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3268817" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20959333" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3262032" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
     </layout>
@@ -443,6 +501,22 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/net/dirbaio/octree/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="203" column="9" selection-start="4501" selection-end="4501" vertical-scroll-proportion="0.0" vertical-offset="2846" max-vertical-offset="4920">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/net/dirbaio/octree/Octree.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="24" column="48" selection-start="513" selection-end="513" vertical-scroll-proportion="0.0" vertical-offset="360" max-vertical-offset="1770">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/net/dirbaio/octree/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="149" column="9" selection-start="3321" selection-end="3321" vertical-scroll-proportion="0.0" vertical-offset="1560" max-vertical-offset="3705">
@@ -491,19 +565,56 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/net/dirbaio/octree/Octree.java">
+    <entry file="file://$PROJECT_DIR$/src/net/dirbaio/octree/Vector3D.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="48" selection-start="513" selection-end="513" vertical-scroll-proportion="0.0" vertical-offset="315" max-vertical-offset="1770">
+        <state line="17" column="7" selection-start="482" selection-end="482" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="4980">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/net/dirbaio/octree/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="203" column="9" selection-start="4501" selection-end="4501" vertical-scroll-proportion="0.33222038" vertical-offset="2846" max-vertical-offset="4920">
+        <state line="134" column="24" selection-start="2825" selection-end="2825" vertical-scroll-proportion="0.0" vertical-offset="1663" max-vertical-offset="3930">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/net/dirbaio/octree/Algorithm.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="0" selection-start="157" selection-end="236" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="285">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/net/dirbaio/octree/GridwalkAlgorithm.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="15" column="45" selection-start="434" selection-end="434" vertical-scroll-proportion="-3.0892856" vertical-offset="52" max-vertical-offset="960">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/net/dirbaio/octree/OctreeAlgorithm.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="115" column="56" selection-start="3997" selection-end="3997" vertical-scroll-proportion="0.0" vertical-offset="1413" max-vertical-offset="3285">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/net/dirbaio/octree/StupidAlgorithm.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="0" selection-start="210" selection-end="279" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="600">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/net/dirbaio/octree/Octree.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="30" column="5" selection-start="783" selection-end="783" vertical-scroll-proportion="0.30116472" vertical-offset="269" max-vertical-offset="1770">
+          <folding />
         </state>
       </provider>
     </entry>
